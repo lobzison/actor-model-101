@@ -7,23 +7,17 @@ import CodeSlide from '../spectacle-code-slide';
 //
 // Import code examples
 //
-import code from './examples/code';
+//import code from './examples/ex';
 //
 // Import PrismJS and its dependencies
 //
 require('normalize.css');
-require('prismjs/themes/prism-solarizedlight.css');
+require('prismjs/themes/prism-dark.css');
 import Prism from 'prismjs/components/prism-core'; // eslint-disable-line no-unused-vars
 import 'prismjs/components/prism-markup-templating';
-// import 'prismjs/components/prism-kotlin';
-// import '../prism-overrides/elm';
-// import '../prism-overrides/clojure';
-// import '../prism-overrides/fsharp';
-// import '../prism-overrides/reason';
-// import '../prism-overrides/rust';
-//
-// Import and preload images
-//
+//import 'prismjs/components/prism-java';
+import 'prismjs/components/prism-scala';
+
 const preload = images => {
     images.forEach(src => {
         const image = new Image();
@@ -106,15 +100,19 @@ export default class Presentation extends React.Component {
                 </Slide>
                 <CodeSlide
                     bgColor="beige"
+                    size='20px'
                     transition={[]}
-                    lang="javascript"
-                    showLineNumbers={false}
-                    code={code}
+                    lang="scala"
+                    showLineNumbers={true}
+                    code={require('raw-loader!./examples/ex.scala')}
                     ranges={[/* eslint-disable no-magic-numbers */
                         {loc: [0, 7], title: 'Code'},
                         {loc: [0, 1]},
                         {loc: [1, 2]},
-                        {loc: [1, 2], note: 'Heres a note!'}/* eslint-enable no-magic-numbers */
+                        {loc: [1, 2], note: 'Heres a note!'},
+                        {loc: [2, 4]},
+                        {loc: [4, 18], note: 'Actor'}
+                        /* eslint-enable no-magic-numbers */
                     ]}/>
             </Deck>
         );
