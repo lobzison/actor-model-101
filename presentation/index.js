@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 import PropTypes from 'prop-types';
-import {BlockQuote, Cite, Deck, Heading, List, ListItem, Quote, Slide, Text} from 'spectacle';
+import {BlockQuote, Cite, Deck, Heading, List, ListItem, Quote, Slide, Text, Notes} from 'spectacle';
 import createTheme from 'spectacle/lib/themes/default';
 import CodeSlide from '../spectacle-code-slide';
 //
@@ -72,31 +72,47 @@ export default class Presentation extends React.Component {
     render() {
         return (
             <Deck transition={[]} transitionDuration={0} theme={theme}>
-                <Title />
-                <FancyHello />
-                <Slide transition={[]} bgColor="tertiary">
-                    <Heading size={6} textColor="primary" caps>Typography</Heading>
-                    <Heading size={1} textColor="secondary">Heading 1</Heading>
-                    <Heading size={2} textColor="secondary">Heading 2</Heading>
-                    <Heading size={3} textColor="secondary">Heading 3</Heading>
-                    <Heading size={4} textColor="secondary">Heading 4</Heading>
-                    <Heading size={5} textColor="secondary">Heading 5</Heading>
-                    <Text size={6} textColor="secondary">Standard text</Text>
+                <Slide>
+                    <Heading caps fit>actror</Heading>
+                    <Heading caps fit>model</Heading>
+                    <Heading caps fit>basics</Heading>
                 </Slide>
-                <Slide transition={[]} bgColor="primary" textColor="tertiary">
-                    <Heading size={6} textColor="secondary" caps>Standard List</Heading>
-                    <List>
-                        <ListItem>Item 1</ListItem>
-                        <ListItem>Item 2</ListItem>
-                        <ListItem>Item 3</ListItem>
-                        <ListItem>Item 4</ListItem>
-                    </List>
+                <Slide>
+                    Originated in 1973 as a computation model to handle higly concurrent computation
                 </Slide>
-                <Slide transition={[]} bgColor="secondary" textColor="primary">
-                    <BlockQuote>
-                        <Quote>Example Quote</Quote>
-                        <Cite>Author</Cite>
-                    </BlockQuote>
+                <Slide>
+                    Actor - a primitive unit of computation
+                    Embeds:
+                    processing
+                    storage
+                    communication
+                </Slide>
+                <Slide>
+                    When message is recieved by an actor can:
+                    Create other actors
+                    Send messages
+                    Change behaviour of itself
+                    <Notes>
+                        behaviour - change how to react to next message
+                        includes changes to the local state
+                    </Notes>
+                </Slide>
+                <Slide>
+                    Actors send messages
+                    asynchronously
+                    messages arrives without order
+                    at most once delivery
+                </Slide>
+                <Slide>
+                    Picture of actors
+                </Slide>
+                <Slide>
+                    Error kernel pattern
+                </Slide>
+                <Slide>
+                    Actor model implementations
+                    Erlang
+                    Akka
                 </Slide>
                 <CodeSlide
                     bgColor="beige"
