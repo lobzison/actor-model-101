@@ -73,7 +73,7 @@ export default class Presentation extends React.Component {
         return (
             <Deck transition={[]} transitionDuration={0} theme={theme}>
                 <Slide>
-                    <Heading caps fit>actror</Heading>
+                    <Heading caps fit>actor</Heading>
                     <Heading caps fit>model</Heading>
                     <Heading caps fit>basics</Heading>
                 </Slide>
@@ -114,6 +114,10 @@ export default class Presentation extends React.Component {
                     Erlang
                     Akka
                 </Slide>
+                <Slide>
+                    Example of programm with actors
+                    QueryingServer
+                </Slide>
                 <CodeSlide
                     bgColor="beige"
                     size='20px'
@@ -122,11 +126,11 @@ export default class Presentation extends React.Component {
                     showLineNumbers={true}
                     code={require('raw-loader!./examples/untyped/src/main/scala/untyped/UserNode.scala')}
                     ranges={[
-                        {loc: [0, 0], title: 'untyped example'},
+                        {loc: [0, 0], title: 'querying server'},
                         {loc: [11, 19], title: 'message types'},
                         {loc: [13, 14], note: 'from user'},
                         {loc: [15, 18], note: 'to user'},
-                        {loc: [21, 21], title: 'actor' },
+                        {loc: [21, 21], title: 'usernode actor' },
                         {loc: [20, 21]},
                         {loc: [23, 24], note: 'id -> executor, requester'},
                         {loc: [25, 26], note: 'partial function'},
@@ -171,6 +175,38 @@ export default class Presentation extends React.Component {
                         {loc: [19, 22], note: 'resend message to itself'},
                         {loc: [23, 32], note: 'close resource'},
                     ]}/>
+                <Slide>
+                    Scalability beyond one machine
+                </Slide>
+                <Slide>
+                    The Good, the Bad and the Ugly
+                </Slide>
+                <Slide>
+                    The ugly:
+                    degugging
+                    reading logs
+                </Slide>
+                <Slide>
+                    The bad:
+                    composability
+                    hard to reason
+                </Slide>
+                <Slide>
+                    The good:
+                    best model for cluster computing
+                </Slide>
+                <Slide>
+                    Sources to dig in:
+                    https://courses.edx.org/courses/course-v1:EPFLx+scala-reactiveX+1T2019/course/
+                    https://www.youtube.com/watch?time_continue=124&v=7erJ1DV_Tlo
+                </Slide>
+                <Slide>
+                    https://github.com/lobzison/actor-model-101
+                </Slide>
+                <Slide>
+                    Spectacle.js
+                    https://github.com/FormidableLabs/spectacle
+                </Slide>
             </Deck>
         );
     }
