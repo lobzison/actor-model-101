@@ -104,15 +104,56 @@ export default class Presentation extends React.Component {
                     transition={[]}
                     lang="scala"
                     showLineNumbers={true}
-                    code={require('raw-loader!./examples/ex.scala')}
-                    ranges={[/* eslint-disable no-magic-numbers */
-                        {loc: [0, 7], title: 'Code'},
-                        {loc: [0, 1]},
-                        {loc: [1, 2]},
-                        {loc: [1, 2], note: 'Heres a note!'},
-                        {loc: [2, 4]},
-                        {loc: [4, 18], note: 'Actor'}
-                        /* eslint-enable no-magic-numbers */
+                    code={require('raw-loader!./examples/untyped/src/main/scala/untyped/UserNode.scala')}
+                    ranges={[
+                        {loc: [0, 0], title: 'untyped example'},
+                        {loc: [11, 19], title: 'message types'},
+                        {loc: [13, 14], note: 'from user'},
+                        {loc: [15, 18], note: 'to user'},
+                        {loc: [21, 21], title: 'actor' },
+                        {loc: [20, 21]},
+                        {loc: [23, 24], note: 'id -> executor, requester'},
+                        {loc: [25, 26], note: 'partial function'},
+                        {loc: [26, 39], note: 'react to message'},
+                        {loc: [26, 27]},
+                        {loc: [27, 28]},
+                        {loc: [28, 29]},
+                        {loc: [29, 33]},
+                        {loc: [33, 34]},
+                        {loc: [34, 35]},
+                        {loc: [35, 36]},
+                        {loc: [36, 37], note: '! = tell'},
+                        {loc: [37, 38], note: 'reply to invalid'},
+                        {loc: [39, 46]},
+                        {loc: [40, 42], note: 'get saved executor and requester'},
+                        {loc: [42, 43], note: 'shutdown executor'},
+                        {loc: [43, 44], note: 'send results to user'},
+                        {loc: [45, 46], note: 'remove from map'},
+                        {loc: [48, 58]},
+                        {loc: [49, 50], note: 'execute after 1 sec'},
+                        {loc: [50, 52], note: 'get saved executor and requester'},
+                        {loc: [52, 53], note: 'remove from map'},
+                        {loc: [53, 54], note: 'shutdown executor'},
+                        {loc: [54, 55], note: 'send timeout ot user'},
+                        {loc: [59, 64], title: 'supervision strategy'},
+                        {loc: [60, 63], note: '5 times in 1 second max'},
+                    ]}/>
+                <CodeSlide
+                    bgColor="beige"
+                    size='20px'
+                    transition={[]}
+                    lang="scala"
+                    showLineNumbers={true}
+                    code={require('raw-loader!./examples/untyped/src/main/scala/untyped/QueryExecutor.scala')}
+                    ranges={[
+                        {loc: [0, 0], title: 'query executor'},
+                        {loc: [5, 9], note: 'message types'},
+                        {loc: [9, 10]},
+                        {loc: [10, 11]},
+                        {loc: [11, 12]},
+                        {loc: [13, 18]},
+                        {loc: [19, 22], note: 'resend message to itself'},
+                        {loc: [23, 32], note: 'close resource'},
                     ]}/>
             </Deck>
         );
