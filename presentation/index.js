@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 import PropTypes from 'prop-types';
-import {BlockQuote, Cite, Deck, Heading, List, ListItem, Quote, Slide, Text, Notes} from 'spectacle';
+import {BlockQuote, Cite, Deck, Heading, List, ListItem, Quote, Slide, Text, Notes, Image} from 'spectacle';
 import createTheme from 'spectacle/lib/themes/default';
 import CodeSlide from '../spectacle-code-slide';
 //
@@ -17,17 +17,20 @@ import Prism from 'prismjs/components/prism-core'; // eslint-disable-line no-unu
 import 'prismjs/components/prism-markup-templating';
 //import 'prismjs/components/prism-java';
 import 'prismjs/components/prism-scala';
-
-const preload = images => {
-    images.forEach(src => {
-        const image = new Image();
-        image.src = src;
+import forEach from 'lodash/forEach';
+const preload = imageCollection => {
+    forEach(imageCollection, src => {
+      const image = new Image();
+      image.src = src;
     });
-};
-const city = require('../assets/city.jpg');
-preload([
-    city
-]);
+  };
+
+const actors = {example: require('../assets/actors.svg'),
+                query: require('../assets/query.svg'),
+                errorKernel: require('../assets/errorKernel.svg'),
+            };
+preload(actors);
+
 //
 // Create Spectacle theme
 const theme = createTheme({
@@ -104,10 +107,13 @@ export default class Presentation extends React.Component {
                     at most once delivery
                 </Slide>
                 <Slide>
-                    Picture of actors
+                   <Image src={actors.example} width = '1200px'/> 
                 </Slide>
                 <Slide>
                     Error kernel pattern
+                </Slide>
+                <Slide>
+                    <Image src={actors.errorKernel} width = '1200px'/> 
                 </Slide>
                 <Slide>
                     Actor model implementations
@@ -115,8 +121,10 @@ export default class Presentation extends React.Component {
                     Akka
                 </Slide>
                 <Slide>
-                    Example of programm with actors
-                    QueryingServer
+                    Query server example
+                </Slide>
+                <Slide>
+                    <Image src={actors.query} width = '1000px'/> 
                 </Slide>
                 <CodeSlide
                     bgColor="beige"
