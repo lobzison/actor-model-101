@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 import PropTypes from 'prop-types';
-import {BlockQuote, Cite, Deck, Heading, List, ListItem, Quote, Slide, Text, Notes, Image} from 'spectacle';
+import {BlockQuote, Cite, Deck, Heading, List, ListItem, Quote, Slide, Text, Notes, Image, Layout, Fill} from 'spectacle';
 import createTheme from 'spectacle/lib/themes/default';
 import CodeSlide from '../spectacle-code-slide';
 //
@@ -84,17 +84,22 @@ export default class Presentation extends React.Component {
                     Originated in 1973 as a computation model to handle higly concurrent computation
                 </Slide>
                 <Slide>
-                    Actor - a primitive unit of computation
-                    Embeds:
-                    processing
-                    storage
-                    communication
+                    <Heading fit caps>Actor</Heading>
+                    <Heading fit>primitive unit</Heading>
+                    <Heading fit>of computation</Heading>
                 </Slide>
                 <Slide>
-                    When message is recieved by an actor can:
-                    Create other actors
-                    Send messages
-                    Change behaviour of itself
+                    <List>
+                        <ListItem textSize="90" bulletStyle="star">processing</ListItem>
+                        <ListItem textSize="90">storage</ListItem>
+                        <ListItem textSize="90">communication</ListItem>
+                    </List>
+                </Slide>
+                <Slide>
+                    <Heading fit margin="50px">When message is recieved actor can</Heading>
+                        <Text align="center center">Create other actors</Text>
+                        <Text align="center center">Send messages</Text>
+                        <Text align="center center">Change behaviour of itself</Text>
                     <Notes>
                         behaviour - change how to react to next message
                         includes changes to the local state
