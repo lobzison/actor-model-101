@@ -81,52 +81,58 @@ export default class Presentation extends React.Component {
                     <Heading caps fit>basics</Heading>
                 </Slide>
                 <Slide>
-                    Originated in 1973 as a computation model to handle higly concurrent computation
+                    <Text fit>Originated in 1973 as</Text>
+                    <Text fit>a computation model to handle</Text>
+                    <Text fit>higly concurrent computation</Text>
                 </Slide>
                 <Slide>
-                    <Heading fit caps>Actor</Heading>
-                    <Heading fit>primitive unit</Heading>
-                    <Heading fit>of computation</Heading>
+                    <Heading fit caps size={2}> Actor</Heading>
+                    <Heading fit caps size={2}>primitive unit</Heading>
+                    <Heading fit caps size={2}>of computation</Heading>
                 </Slide>
                 <Slide>
                     <List>
-                        <ListItem textSize="90" bulletStyle="star">processing</ListItem>
-                        <ListItem textSize="90">storage</ListItem>
-                        <ListItem textSize="90">communication</ListItem>
+                        <ListItem textSize="60">processing</ListItem>
+                        <ListItem textSize="60">storage</ListItem>
+                        <ListItem textSize="60">communication</ListItem>
                     </List>
                 </Slide>
                 <Slide>
-                    <Heading fit margin="50px">When message is recieved actor can</Heading>
-                        <Text align="center center">Create other actors</Text>
-                        <Text align="center center">Send messages</Text>
-                        <Text align="center center">Change behaviour of itself</Text>
+                    <Heading fit size={2}>When message is</Heading>
+                    <Heading fit size={2} margin="30px">recieved actor can</Heading>
+                        <Text textSize="60">Create other actors</Text>
+                        <Text textSize="60">Send messages</Text>
+                        <Text textSize="60">Change behaviour of itself</Text>
                     <Notes>
                         behaviour - change how to react to next message
                         includes changes to the local state
                     </Notes>
                 </Slide>
                 <Slide>
-                    Actors send messages
-                    asynchronously
-                    messages arrives without order
-                    at most once delivery
+                    <Text textSize="47">Actors send messages asynchronously</Text>
+                    <Text textSize="47">messages arrives without order</Text>
+                    <Text textSize="47">with at most once delivery</Text>
                 </Slide>
                 <Slide>
                    <Image src={actors.example} width = '1200px'/> 
                 </Slide>
                 <Slide>
-                    Error kernel pattern
+                    <Text caps fit>Error kernel</Text>
+                    <Text caps fit>pattern</Text>
                 </Slide>
                 <Slide>
                     <Image src={actors.errorKernel} width = '1200px'/> 
                 </Slide>
                 <Slide>
-                    Actor model implementations
-                    Erlang
-                    Akka
+                    <Heading size={4}>Actor model implementations</Heading>
+                    <Text margin="20">Erlang</Text>
+                    <Text margin="20">Akka</Text>
+                    <Text margin="20">others</Text>
                 </Slide>
                 <Slide>
-                    Query server example
+                    <Heading caps fit>Query</Heading>
+                    <Heading caps fit>server</Heading>
+                    <Heading caps fit>example</Heading>
                 </Slide>
                 <Slide>
                     <Image src={actors.query} width = '1000px'/> 
@@ -189,24 +195,29 @@ export default class Presentation extends React.Component {
                         {loc: [23, 32], note: 'close resource'},
                     ]}/>
                 <Slide>
-                    Scalability beyond one machine
+                    <Heading size={2} fit>Scalability</Heading> 
+                    <Heading size={2} fit>beyond one machine</Heading>
                 </Slide>
                 <Slide>
-                    The Good, the Bad and the Ugly
+                    <Heading fit caps>the Ugly</Heading>
+                    <Heading fit caps>the Bad</Heading>
+                    <Heading fit caps>the good</Heading>
                 </Slide>
                 <Slide>
-                    The ugly:
-                    degugging
-                    reading logs
+                    <Heading size={2} margin="50">The ugly</Heading>
+                    <Text>degugging</Text>
+                    <Text>reading logs</Text>
                 </Slide>
                 <Slide>
-                    The bad:
-                    composability
-                    hard to reason
+                    <Heading size={2} margin="50">The bad</Heading>
+                    <Text>composability</Text>
+                    <Text>hard to reason</Text>
+                    <Text>low level</Text>
                 </Slide>
                 <Slide>
-                    The good:
-                    best model for cluster computing
+                    <Heading size={2} margin="50">The good</Heading>
+                    <Text>ok model for high concurrency</Text>
+                    <Text>"best" model for cluster computing</Text>
                 </Slide>
                 <Slide>
                     Sources to dig in:
