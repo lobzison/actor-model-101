@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 import PropTypes from 'prop-types';
-import {BlockQuote, Cite, Deck, Heading, List, ListItem, Quote, Slide, Text, Notes, Image, Layout, Fill} from 'spectacle';
+import {BlockQuote, Cite, Deck, Heading, List, ListItem, Quote, Slide, Text, Notes, Image, Layout, Fill, Link} from 'spectacle';
 import createTheme from 'spectacle/lib/themes/default';
 import CodeSlide from '../spectacle-code-slide';
 //
@@ -220,16 +220,27 @@ export default class Presentation extends React.Component {
                     <Text>"best" model for cluster computing</Text>
                 </Slide>
                 <Slide>
-                    Sources to dig in:
-                    https://courses.edx.org/courses/course-v1:EPFLx+scala-reactiveX+1T2019/course/
-                    https://www.youtube.com/watch?time_continue=124&v=7erJ1DV_Tlo
+                    <Text textSize="120">Links</Text>
+                    <Link textSize="60" href="https://www.edx.org/course/programming-reactive-systems">
+                        Reactive programming course
+                    </Link>
+                    <Text/>
+                    <Link textSize="60" href="https://youtu.be/7erJ1DV_Tlo">
+                        Great explanation video
+                    </Link>
+                    <Text/>
+                    <Link textSize="60" href="https://akka.io/">
+                        Akka
+                    </Link>
+                    <Text/>
+                    <Link textSize="60" href="https://github.com/lobzison/actor-model-101">
+                        Presentation repo
+                    </Link>
                 </Slide>
                 <Slide>
-                    https://github.com/lobzison/actor-model-101
-                </Slide>
-                <Slide>
-                    Spectacle.js
-                    https://github.com/FormidableLabs/spectacle
+                    <Heading fit caps href="https://github.com/FormidableLabs/spectacle">
+                        Spectacle.js
+                    </Heading>
                 </Slide>
             </Deck>
         );
