@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'react-emotion';
 import PropTypes from 'prop-types';
-import {BlockQuote, Cite, Deck, Heading, List, ListItem, Quote, Slide, Text, Notes, Image, Layout, Fill, Link} from 'spectacle';
+import {Deck, Heading, List,
+     ListItem, Slide, Text, Notes, Image, Link,
+    Spectacle} from 'spectacle';
 import createTheme from 'spectacle/lib/themes/default';
 import CodeSlide from '../spectacle-code-slide';
 //
@@ -11,8 +13,8 @@ import CodeSlide from '../spectacle-code-slide';
 //
 // Import PrismJS and its dependencies
 //
-require('normalize.css');
-require('prismjs/themes/prism-dark.css');
+//require('normalize.css');
+require('prismjs/themes/prism.css');
 import Prism from 'prismjs/components/prism-core'; // eslint-disable-line no-unused-vars
 import 'prismjs/components/prism-markup-templating';
 //import 'prismjs/components/prism-java';
@@ -28,6 +30,7 @@ const preload = imageCollection => {
 const actors = {example: require('../assets/actors.svg'),
                 query: require('../assets/query.svg'),
                 errorKernel: require('../assets/errorKernel.svg'),
+                server: require('../assets/server.jpg')
             };
 preload(actors);
 
@@ -36,8 +39,8 @@ preload(actors);
 const theme = createTheme({
     primary: 'white',
     secondary: '#1F2022',
-    tertiary: '#03A9FC',
-    quarternary: '#CECECE'
+    tertiary: '#07a',
+    quarternary: '#77aa00'
 }, {
     primary: 'Montserrat',
     secondary: 'Helvetica'
@@ -86,7 +89,7 @@ export default class Presentation extends React.Component {
                     <Text fit>higly concurrent computation</Text>
                 </Slide>
                 <Slide>
-                    <Heading fit caps size={2}> Actor</Heading>
+                    <Heading fit caps size={2}>Actor</Heading>
                     <Heading fit caps size={2}>primitive unit</Heading>
                     <Heading fit caps size={2}>of computation</Heading>
                 </Slide>
@@ -138,7 +141,7 @@ export default class Presentation extends React.Component {
                     <Image src={actors.query} width = '1000px'/> 
                 </Slide>
                 <CodeSlide
-                    bgColor="beige"
+                    bgColor="white"
                     size='20px'
                     transition={[]}
                     lang="scala"
@@ -178,7 +181,7 @@ export default class Presentation extends React.Component {
                         {loc: [60, 63], note: '5 times in 1 second max'},
                     ]}/>
                 <CodeSlide
-                    bgColor="beige"
+                    bgColor="white"
                     size='20px'
                     transition={[]}
                     lang="scala"
@@ -194,30 +197,30 @@ export default class Presentation extends React.Component {
                         {loc: [19, 22], note: 'resend message to itself'},
                         {loc: [23, 32], note: 'close resource'},
                     ]}/>
-                <Slide>
-                    <Heading size={2} fit>Scalability</Heading> 
-                    <Heading size={2} fit>beyond one machine</Heading>
+                <Slide bgImage={actors.server}>
+                    <Heading size={2} fit textColor="primary">Scalability</Heading> 
+                    <Heading size={2} fit textColor="primary">beyond one machine</Heading>
                 </Slide>
                 <Slide>
-                    <Heading fit caps>the Ugly</Heading>
-                    <Heading fit caps>the Bad</Heading>
-                    <Heading fit caps>the good</Heading>
+                    <Heading fit caps textColor="secondary">the Ugly</Heading>
+                    <Heading fit caps textColor="tertiary">the Bad</Heading>
+                    <Heading fit caps textColor="quarternary">the good</Heading>
                 </Slide>
                 <Slide>
-                    <Heading size={2} margin="50">The ugly</Heading>
+                    <Heading size={2} margin="50" textColor="secondary">The ugly</Heading>
                     <Text>degugging</Text>
                     <Text>reading logs</Text>
                 </Slide>
                 <Slide>
-                    <Heading size={2} margin="50">The bad</Heading>
-                    <Text>composability</Text>
-                    <Text>hard to reason</Text>
-                    <Text>low level</Text>
+                    <Heading size={2} margin="50" textColor="tertiary">The bad</Heading>
+                    <Text textColor="tertiary">composability</Text>
+                    <Text textColor="tertiary">hard to reason</Text>
+                    <Text textColor="tertiary">low level</Text>
                 </Slide>
                 <Slide>
-                    <Heading size={2} margin="50">The good</Heading>
-                    <Text>ok model for high concurrency</Text>
-                    <Text>"best" model for cluster computing</Text>
+                    <Heading size={2} margin="50" textColor="quarternary">The good</Heading>
+                    <Text textColor="quarternary">ok model for high concurrency</Text>
+                    <Text textColor="quarternary">"best" model for cluster computing</Text>
                 </Slide>
                 <Slide>
                     <Text textSize="120">Links</Text>
@@ -232,7 +235,7 @@ export default class Presentation extends React.Component {
                     <Link textSize="60" href="https://akka.io/">
                         Akka
                     </Link>
-                    <Text/>
+                    <Text></Text>
                     <Link textSize="60" href="https://github.com/lobzison/actor-model-101">
                         Presentation repo
                     </Link>
@@ -244,5 +247,6 @@ export default class Presentation extends React.Component {
                 </Slide>
             </Deck>
         );
+
     }
 }
