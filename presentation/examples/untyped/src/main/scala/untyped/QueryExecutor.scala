@@ -19,11 +19,7 @@ class QueryExecutor extends Actor {
 
   override def preRestart(reason: Throwable, message: Option[Any]): Unit = {
     message foreach (self ! _)
-  }
-
-  override def postRestart(ex: Throwable) = {
     es.closeConnection()
-    super.postRestart(ex)
   }
 
   override def postStop() = {

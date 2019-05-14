@@ -30,7 +30,10 @@ const preload = imageCollection => {
 const actors = {example: require('../assets/actors.svg'),
                 query: require('../assets/query.svg'),
                 errorKernel: require('../assets/errorKernel.svg'),
-                server: require('../assets/server.jpg')
+                server: require('../assets/server.jpg'),
+                abstract1: require('../assets/abstract1.jpg'),
+                abstract2: require('../assets/abstract2.jpg'),
+                abstract3: require('../assets/abstract3.jpg'),
             };
 preload(actors);
 
@@ -195,7 +198,7 @@ export default class Presentation extends React.Component {
                         {loc: [11, 12]},
                         {loc: [13, 18]},
                         {loc: [19, 22], note: 'resend message to itself'},
-                        {loc: [23, 32], note: 'close resource'},
+                        {loc: [24, 28], note: 'close resource'},
                     ]}/>
                 <Slide bgImage={actors.server}>
                     <Heading size={2} fit textColor="primary">Scalability</Heading> 

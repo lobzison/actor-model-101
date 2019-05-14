@@ -39,9 +39,9 @@ class UserNode extends Actor {
       }
     case QueryReply(id, r) =>
       notExecuted get id foreach {
-          case (executor, sender) =>
+          case (executor, user) =>
             executor ! PoisonPill
-            sender ! QueryResult(r)
+            user ! QueryResult(r)
         }
       notExecuted -= id
   }
@@ -49,10 +49,10 @@ class UserNode extends Actor {
   def scheduleQueryTimeout(id: Long): Unit = {
     context.system.scheduler.scheduleOnce(1 second){
       notExecuted get id foreach {
-        case (executor, sender) =>
+        case (executor, user) =>
         notExecuted -= id
         executor ! PoisonPill
-        sender ! Timeout
+        user ! Timeout
       }
     }
   }
