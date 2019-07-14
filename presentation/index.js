@@ -104,8 +104,22 @@ export default class Presentation extends React.Component {
                     </List>
                 </Slide>
                 <Slide>
+                    <Heading fit caps size={2}>Communication</Heading>
+                    <Heading fit caps size={2}>handled by messagaging</Heading>
+                </Slide>
+                <Slide>
+                    <Text textSize="47">Actors send messages asynchronously</Text>
+                    <Text textSize="47">messages arrives without order</Text>
+                    <Text textSize="47">with at most once delivery</Text>
+                </Slide>
+                <Slide>
+                    <Text fit>Received massages</Text>
+                    <Text fit>are placed into reciever's messagebox</Text>
+                    <Text fit>where they are waiting to be processed</Text>
+                </Slide>
+                <Slide>
                     <Heading fit size={2}>When message is</Heading>
-                    <Heading fit size={2} margin="30px">recieved actor can</Heading>
+                    <Heading fit size={2} margin="30px">processed actor can</Heading>
                         <Text textSize="60">Create other actors</Text>
                         <Text textSize="60">Send messages</Text>
                         <Text textSize="60">Change behaviour of itself</Text>
@@ -115,16 +129,11 @@ export default class Presentation extends React.Component {
                     </Notes>
                 </Slide>
                 <Slide>
-                    <Text textSize="47">Actors send messages asynchronously</Text>
-                    <Text textSize="47">messages arrives without order</Text>
-                    <Text textSize="47">with at most once delivery</Text>
-                </Slide>
-                <Slide>
                    <Image src={actors.example} width = '1200px'/> 
                 </Slide>
                 <Slide>
                     <Text caps fit>Error kernel</Text>
-                    <Text caps fit>pattern</Text>
+                    <Text caps fit>pattern example</Text>
                 </Slide>
                 <Slide>
                     <Image src={actors.errorKernel} width = '1200px'/> 
